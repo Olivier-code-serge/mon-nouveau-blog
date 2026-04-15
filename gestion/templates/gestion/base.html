@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/gestion.css' %}">
+    <title>Gestion commercial</title>
+</head>
+<br>
+    <div class="title">
+        <h1>Gestion d'une boutique de vêtements en ligne</h1>
+    </div>
+    <div id = "conteneur">
+        <div class="Retour"><a href="/">[Retour à la page d'accueil]</a></div>
+        <div class="Projet" ><a href="{% url 'prod_new' %}">Nouveau produit</a></div>
+        <div class="Programme">Formulaire</div>
+        <div class="Mission">Tableau</div>
+        
+    </div>
+    
+    <div class="imag1">
+        <p><img style="width: 150px;float: right;padding: 5px;margin-right: 50px;border: 2px solid red;" src="{% static 'css/images/femme.jpg' %}" alt="Mode" title="Femme"/></p>
+     </div>
+    
+{% block content %} 
+{% endblock %} 
+    </br>
+<div class="footer"> 
+    <div class="page">Marcory zone 4, Rue Mercedes, Contact : 07 07 63 32 73</div> 
+</div>
+</body>
+</html>

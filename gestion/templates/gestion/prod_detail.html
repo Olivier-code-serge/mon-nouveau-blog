@@ -1,0 +1,25 @@
+{% extends 'gestion/base.html' %} 
+
+ {% block content %}
+
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Détail des articles achetés :</h1>
+    <p>Nom : {{ prodat.name}}</p>
+    <p> Taille du vêtement: {{ prodat.shirt_size }}</p>
+    <p>Quantité : {{ prodat.qte }}</p>
+    <p>Prix unitaire : {{ prodat.prix }} F</p>
+    <p><strong> Prix total : {{ prodat.publish }} F</strong></p>
+    <p class="bouton1"><a href="{% url 'prod_edit' prodat.pk %}">Modifier le produit /</a></p>
+    <p class="bouton2"><a href="{% url 'prod_supprim' prodat.pk %}">Supprimer le produit</a></p>
+    
+
+</body>
+</html>
+{% endblock %}

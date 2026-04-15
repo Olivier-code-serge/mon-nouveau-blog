@@ -1,0 +1,22 @@
+ {% extends 'gestion/base.html' %} 
+
+ {% block content %}
+<h1>Liste des vêtements vendus</h1>
+{% for prada in prodis %}
+<div id="general">
+    <div class="nb_general"> Total général : {{ prada.general }} F CFA</div>
+    <div class="nb_client">Nombre total de clients : {{ prada.nb_client }}</div>
+    <div class="nb_article"> Nombre d'articles vendus : {{ prada.nb_article }}</div>
+</div>    
+{% endfor %}
+
+{% for prod in produit %}
+    <p><strong>Client :<a href="{% url 'prod_detail' pk=prod.pk %}"> {{ prod.name |upper }}</a></strong> - Taille du vêtement : {{ prod.shirt_size }}</p>
+    <p>Prix unitaire : {{ prod.prix }} F</p>
+    <p>Quantité : {{ prod.qte }}</p>
+    <p><strong> Prix total : {{ prod.publish }} F</strong></p>
+    
+    <br/>
+{% endfor%}
+
+{% endblock %}

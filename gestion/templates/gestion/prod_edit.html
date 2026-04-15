@@ -1,0 +1,29 @@
+{% extends 'gestion/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if sauvegarde %}
+        <p>L'enregistrement est parfait</p>
+    {% endif %}
+
+    <h2 style="text-align: center;background-color: red;color: white;width: 300px;margin-left: 500px;">Nouveau produit</h2>
+    <form method="POST" class="post-form">
+        <fieldset style="width: 250px;border: 2px solid; color: brown;">
+            <legend><strong>Gestion des clients :</strong></legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Enregistrer</button>
+        <button type="submit"><a href="{% url 'prod_list' %}">Annuler</a></button>
+        </fieldset>
+    </form>
+    
+</body>
+</html>
+{% endblock %}
