@@ -86,7 +86,7 @@ h1{
 	height:20px;
 	color: white;
 	text-align: center;
-	background-color:black;
+	background-color:rgb(8, 243, 243);
 	
 }
 
@@ -133,5 +133,14 @@ a:visited{
 	height: 40px;
 	justify-content: center;
 	align-items: center;
+}
+
+table{
+	border: 2px solid blue;
+	border-collapse: collapse;
+	padding-right: 50px;
+}
+tr, th, td{
+	border: 2px solid;
 }
 

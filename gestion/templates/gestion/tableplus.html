@@ -1,0 +1,32 @@
+{% extends "gestion/base.html" %}
+
+{% block content %}
+    <div class="Production">
+        <table style="padding: 90px;">
+            <thead>
+                <tr style="border: 2px solid; background-color: rgb(8, 215, 188);">
+                    <th>Client</th>
+                    <th>Taille du vêtement</th>
+                    <th>Qté</th>
+                    <th>Prix unitaire</th>
+                    <th>Prix total</th>
+                </tr>
+            </thead>
+            {% for prod in prodas %}
+            <tr>
+                <td><a href="{% url 'prod_detail' pk=prod.pk %}">{{ prod.name }}</a></td>
+                <td style="text-align: center;background-color: antiquewhite;">{{ prod.shirt_size }} </td>
+                <td style="text-align: center;">{{ prod.qte }} </td>
+                <td style="text-align: center;">{{ prod.prix }} F</td>
+                <td style="text-align: right; background-color: aqua;">{{ prod.publish }} F</td>
+            </tr>
+            {% endfor %}
+            {% for prodis in prod %}
+            <tr>
+                <td style="background-color: bisque;" colspan="4"><strong>Total général</strong></td>
+                <td style="background-color: yellow;"><strong>{{ prodis.general }} F</strong></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

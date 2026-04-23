@@ -13,6 +13,11 @@ def prod_detail(request, pk):
     prodat = get_object_or_404(Person, pk=pk)
     return render(request, 'gestion/prod_detail.html', {'prodat':prodat})
 
+def prod_tablePlus(request):
+    prodas = Person.objects.all().order_by('name')
+    prod = Person.objects.all()[1:2]
+    return render(request, 'gestion/tableplus.html', {'prodas':prodas, 'prod':prod})
+
 def prod_new(request):
     
     if request.method == "POST":

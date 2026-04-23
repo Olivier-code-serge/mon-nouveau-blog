@@ -10,8 +10,7 @@ class Person(models.Model):
     shirt_size = models.CharField(max_length=1, choices=SHIRT_SIZES)
     qte = models.IntegerField(blank=True, default=0, null=True, verbose_name='quantité')
     prix = models.DecimalField(max_digits=10, decimal_places=2)
-    
-    
+        
     
     def __str__(self):
         return self.name
